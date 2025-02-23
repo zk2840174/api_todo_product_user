@@ -38,6 +38,10 @@ dependencies {
 	
 	implementation 'org.modelmapper:modelmapper:3.2.2'
 
+	// https://mvnrepository.com/artifact/net.coobird/thumbnailator
+	implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.20'
+
+
 
 }
 

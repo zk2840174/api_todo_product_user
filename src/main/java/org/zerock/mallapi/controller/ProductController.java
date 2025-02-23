@@ -97,6 +97,12 @@ public class ProductController {
   @GetMapping("/{pno}")
   public ProductDTO read(@PathVariable(name="pno") Long pno) {
 
+    try {
+      Thread.sleep(3000);
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
+    }
+
     return productService.get(pno);
   }
 
