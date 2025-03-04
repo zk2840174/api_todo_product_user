@@ -75,7 +75,7 @@ public class ProductController {
   // }
 
   @GetMapping("/view/{fileName}")
-  public ResponseEntity<Resource> viewFileGET(@PathVariable String fileName){
+  public ResponseEntity<Resource> viewFileGET(@PathVariable("fileName") String fileName){
 
     return fileUtil.getFile(fileName);
 
