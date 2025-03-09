@@ -61,8 +61,14 @@ public class TodoController {
     log.info("TodoDTO: " + todoDTO);
 
     Long tno = service.register(todoDTO);
-    
-    return Map.of("TNO", tno);
+
+      try {
+          Thread.sleep(2000);
+      } catch (InterruptedException e) {
+          throw new RuntimeException(e);
+      }
+
+      return Map.of("TNO", tno);
   }
 
   @PutMapping("/{tno}")
