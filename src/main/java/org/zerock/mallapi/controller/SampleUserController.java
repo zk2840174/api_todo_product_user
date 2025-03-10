@@ -39,10 +39,16 @@ public class SampleUserController {
         return Map.of("result", sampleUserDTO.getUid());
     }
 
-    @GetMapping("/login")
+    @RequestMapping ("/login")
     public SampleUserDTO login(String uid, String upw){
 
         log.info("login: " + uid + " " + upw);
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         return sampleUserService.getUidAndUpw(uid, upw);
 
