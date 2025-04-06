@@ -32,7 +32,7 @@ public class ProductController {
   private final ProductService productService; //ProductServcie 주입 
   private final CustomFileUtil fileUtil;
 
-  @PostMapping("/")
+  @PostMapping("")
   public Map<String, Long> register(ProductDTO productDTO){
     
     log.info("rgister: " + productDTO);

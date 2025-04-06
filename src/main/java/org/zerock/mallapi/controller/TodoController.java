@@ -55,7 +55,7 @@ public class TodoController {
     return result;
   }
 
-  @PostMapping("/")
+  @PostMapping("")
   public Map<String, Long> register(@RequestBody TodoDTO todoDTO){
    
     log.info("TodoDTO: " + todoDTO);
@@ -82,7 +82,7 @@ public class TodoController {
 
     service.modify(todoDTO);
 
-    return Map.of("RESULT", "SUCCESS");
+    return Map.of("result", "MODIFIED");
   }
 
   @DeleteMapping("/{tno}")
@@ -90,9 +90,9 @@ public class TodoController {
 
     log.info("Remove:  " + tno);
 
-    service.remove(tno);
+    //service.remove(tno);
 
-    return Map.of("RESULT", "SUCCESS");
+    return Map.of("result", "DELETED");
   }
 
 
